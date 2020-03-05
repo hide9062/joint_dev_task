@@ -2,10 +2,10 @@
 # 回答の出力を確認される際は，「ruby main.rb」をターミナルから実行して下さい。
 
 def q1
-  names = ["田中", "佐藤", "佐々木", "高橋"]
+  names = ["田中", "佐藤", "佐々木", "高橋", "斎藤"]
 
   # 以下に回答を記載
-
+puts "#{names}"
 end
 
 def q2
@@ -13,7 +13,8 @@ def q2
   array2 = %w(bird bat tiger)
 
   # 以下に回答を記載
-
+  array = "dog cat fish bird bat tiger"
+puts %W(#{array})
 end
 
 def q3
