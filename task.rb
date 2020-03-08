@@ -27,7 +27,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-p newsports = sports.compact
+p sports.compact!
 end
 
 def q5
