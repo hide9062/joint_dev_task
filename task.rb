@@ -131,24 +131,51 @@ def q16
     { name: "yamada", age: 12 },
     { name: "takahashi", age: 32 },
     { name: "nakamura", age: 41 }
-  ]
+]
 
   # 以下に回答を記載
-users.each {|user|
-p "私の名前は#{user[:name]}です。年齢は#{user[:age]}です"}
 
 end
 
 class UserQ17
   # 以下に回答を記載
-
-
+    def initialize(**params)
+      @name = params[:name]
+      @age = params[:age]
+      @gender = params[:gender]
+      @admin = params[:admin]
+    end
+    def name
+      @name
+    end
+    def age
+      @age
+    end
+    def gender
+      @gender
+    end
+  def admin
+    @admin
 end
+  end
 
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
-  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin: true)
-  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin: false)
+  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin:"有り")
+  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin:"無し")
+
+  def user1.info
+        puts "名前：#{name}"
+        puts "年齢：#{age}"
+        puts "性別：#{gender}"
+        puts "管理者権限：#{admin}"
+end
+def user2.info
+        puts "名前：#{name}"
+        puts "年齢：#{age}"
+        puts "性別：#{gender}"
+        puts "管理者権限：#{admin}"
+end
 
   user1.info
   puts "-------------"
@@ -157,8 +184,6 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  
-
 end
 
 def q18
@@ -168,8 +193,8 @@ def q18
 
   puts user1.introduce
   puts user2.introduce
-end
 
+end
 class Item
   # 以下を修正して下さい
 
