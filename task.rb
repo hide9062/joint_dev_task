@@ -139,61 +139,61 @@ end
 
 class UserQ17
   # 以下に回答を記載
-    def initialize(**params)
-      @name = params[:name]
-      @age = params[:age]
-      @gender = params[:gender]
-      @admin = params[:admin]
-    end
-    def name
-      @name
-    end
-    def age
-      @age
-    end
-    def gender
-      @gender
-    end
-  def admin
-    @admin
-end
+  def initialize(name:, age:, gender:, admin:)
+    @name = name
+    @age = age
+    @gender = gender
+    @admin = admin
   end
-
+  def info
+    puts  <<~EOS
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    管理者権限:#{@admin = @admin ? '有り' : '無し'}
+    EOS
+  end
+end
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
-  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin:"有り")
-  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin:"無し")
-
-  def user1.info
-        puts "名前：#{name}"
-        puts "年齢：#{age}"
-        puts "性別：#{gender}"
-        puts "管理者権限：#{admin}"
-end
-def user2.info
-        puts "名前：#{name}"
-        puts "年齢：#{age}"
-        puts "性別：#{gender}"
-        puts "管理者権限：#{admin}"
-end
+  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin: true)
+  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin: false)
 
   user1.info
   puts "-------------"
   user2.info
 end
-
 class UserQ18
-  # 以下に回答を記載
+  #
+attr_reader :name, :age
+def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
+
+  def age=(age)
+    @age = age
+  end
 end
 
 def q18
   # ここは変更しないで下さい
   user1 = UserQ18.new(name: "あじー", age: 32)
   user2 = UserQ18.new(name: "ゆたぼん", age: 10)
-
-  puts user1.introduce
-  puts user2.introduce
-
+puts <<~TEXT
+NAME:
+AGE:
+TEXT
+user1.age = 32
+user2.age = 10
+  def user1.introduce
+  "こんにちは#{user1.name}と申します。よろしくお願い致します。"
+  end
+  def user2.introduce
+   "はいさいまいど〜，#{user2.name}です！！！"
+  end
+  puts user1.introduce
+  puts user2.introduce
 end
 class Item
   # 以下を修正して下さい
