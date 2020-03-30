@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+p names.push("斎藤")
 end
 
 def q2
@@ -13,18 +13,22 @@ def q2
   array2 = %w(bird bat tiger)
 
   # 以下に回答を記載
+  puts array = array1 +array2
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
+  p numbers.count{|num| num == 3}
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
+  sports.delete(nil)
+  p sports
 
 end
 
@@ -33,28 +37,30 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
+puts array1.empty?
+puts array2.empty?
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+p new_numbers1 = [|n| n * 10]
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+p array.map &:to_i
 end
 
 def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-
+programming_languages.map!(&:capitalize)
+upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -64,10 +70,9 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each_with_index do |item,i|
- puts "会員No.#{i+1} #{item}さん"
- end
-
+names.each_with_index do |item,i|
+  puts "会員No.#{i+1} #{item}さん"
+end
 end
 
 def q10
@@ -76,11 +81,10 @@ def q10
   # 以下に回答を記載
   if foods.include?("うに")
    puts "好物です"
- else
+  else
    puts "まぁまぁ好きです"
- end
-end
-
+  end
+  end
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
@@ -145,13 +149,15 @@ class UserQ17
     @gender = gender
     @admin = admin
   end
+
   def info
-    puts  <<~EOS
+    @admin = @admin ? '有り' : '無し'
+    puts  <<~TEXT
     名前:#{@name}
     年齢:#{@age}
     性別:#{@gender}
-    管理者権限:#{@admin = @admin ? '有り' : '無し'}
-    EOS
+    管理者権限:#{@admin}
+    TEXT
   end
 end
 def q17
@@ -163,38 +169,28 @@ def q17
   puts "-------------"
   user2.info
 end
+
 class UserQ18
-  #
-attr_reader :name, :age
-def initialize(**params)
-    @name = params[:name]
-    @age = params[:age]
-  end
-
-  def age=(age)
-    @age = age
-  end
+  def initialize(name:,age:)
+      @name = name
+      @age = age
 end
-
+def introduce
+puts <<~TEXT
+#{@age > 20 ? "こんにちは、#{@name}と申します。宜しくお願い致します。" : "はいさいまいど〜、#{@name}です！！！"}
+TEXT
+end
+end
 def q18
   # ここは変更しないで下さい
   user1 = UserQ18.new(name: "あじー", age: 32)
   user2 = UserQ18.new(name: "ゆたぼん", age: 10)
-puts <<~TEXT
-NAME:
-AGE:
-TEXT
-user1.age = 32
-user2.age = 10
-  def user1.introduce
-  "こんにちは#{user1.name}と申します。よろしくお願い致します。"
-  end
-  def user2.introduce
-   "はいさいまいど〜，#{user2.name}です！！！"
-  end
+
   puts user1.introduce
   puts user2.introduce
 end
+
+
 class Item
   # 以下を修正して下さい
 
