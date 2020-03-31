@@ -3,9 +3,8 @@
 
 def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
-
   # 以下に回答を記載
-p names.push("斎藤")
+
 end
 
 def q2
@@ -13,22 +12,19 @@ def q2
   array2 = %w(bird bat tiger)
 
   # 以下に回答を記載
-  puts array = array1 +array2
+
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-  p numbers.count{|num| num == 3}
-end
+  end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  sports.delete(nil)
-  p sports
 
 end
 
@@ -37,30 +33,23 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-puts array1.empty?
-puts array2.empty?
 end
-
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-p new_numbers1 = [|n| n * 10]
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-p array.map &:to_i
 end
 
 def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-programming_languages.map!(&:capitalize)
-upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -70,36 +59,24 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-names.each_with_index do |item,i|
-  puts "会員No.#{i+1} #{item}さん"
-end
+
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  if foods.include?("うに")
-   puts "好物です"
-  else
-   puts "まぁまぁ好きです"
-  end
   end
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports.flatten.uniq.each.with_index(1) do |sport,i|
-    puts "No#{i} #{sport}"
-  end
-
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-p data[:user][:name]
 
 end
 
@@ -108,15 +85,12 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-p user_data.merge!(update_data)
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-p array = data.keys
-
 end
 
 def q15
@@ -124,9 +98,6 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-p data1.key?(:age) ?'OK' : 'NG'
-p data2.key?(:age) ?'OK' : 'NG'
-
 end
 
 def q16
@@ -143,22 +114,7 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(name:, age:, gender:, admin:)
-    @name = name
-    @age = age
-    @gender = gender
-    @admin = admin
-  end
 
-  def info
-    @admin = @admin ? '有り' : '無し'
-    puts  <<~TEXT
-    名前:#{@name}
-    年齢:#{@age}
-    性別:#{@gender}
-    管理者権限:#{@admin}
-    TEXT
-  end
 end
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
@@ -171,6 +127,8 @@ def q17
 end
 
 class UserQ18
+  # 以下に回答を記載
+
   def initialize(name:,age:)
       @name = name
       @age = age
