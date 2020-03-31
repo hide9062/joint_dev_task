@@ -50,9 +50,6 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  # 以下は変更しないで下さい
-  p programming_languages
-  p upper_case_programming_languages
 end
 
 def q9
@@ -134,7 +131,7 @@ class UserQ18
       @age = age
 end
 def introduce
-puts <<~TEXT
+<<~TEXT
 #{@age > 20 ? "こんにちは、#{@name}と申します。宜しくお願い致します。" : "はいさいまいど〜、#{@name}です！！！"}
 TEXT
 end
