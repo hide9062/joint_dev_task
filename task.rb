@@ -34,17 +34,17 @@ def q5
 
   # 以下に回答を記載
 end
-def q6
-  numbers1 = [1, 2, 3, 4, 5]
+#def q6
+  #numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-end
+#end
 
-def q7
-  array = ["1", "2", "3", "4", "5"]
+#def q7
+#  array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-end
+#end
 
 def q8
   programming_languages = %w(ruby php python javascript)
@@ -125,15 +125,10 @@ end
 
 class UserQ18
   # 以下に回答を記載
-
   def initialize(name:,age:)
       @name = name
       @age = age
-end
-def introduce
-<<~TEXT
-#{@age > 20 ? "こんにちは、#{@name}と申します。宜しくお願い致します。" : "はいさいまいど〜、#{@name}です！！！"}
-TEXT
+@age > 20 ? "こんにちは、#{@name}と申します。宜しくお願い致します。" : "はいさいまいど〜、#{@name}です！！！"
 end
 end
 def q18
@@ -148,8 +143,8 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+attr_accessor :name
+  def initialize(name:)
     @name = name
   end
 end
