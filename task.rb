@@ -144,8 +144,8 @@ end
 class Item
   # 以下を修正して下さい
   attr_reader :name
-  def initialize(**params)
-      @name = params[:name]
+  def initialize(name:)
+      @name = name
   end
 
 end
@@ -178,13 +178,13 @@ end
 def info_entry_fee(user)
   fee = case user.age
   when 0..5
-    entry_fee = @infant
+    @infant
   when 6..12
-    entry_fee = @children
+    @children
   when 13..64
-    entry_fee = @adult
+    @adult
   when 65..120
-    entry_fee = @senior
+    @senior
   end
   puts "#{user.name}さんの入場料金は#{fee}円です"
 
